@@ -1,0 +1,45 @@
+\documentclass[12pt, final]{article}
+
+% Package imports
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+
+\graphicspath{{Figures}}
+
+% Setup of the header/footer
+\pagestyle{fancy}
+
+
+% Utilize basic title configuration
+\title{TEMPLATE}
+\author{David Johannesson, orn.david@gmail.com}
+
+% This package can be removed
+\usepackage{lipsum}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{Sections/00.Introduction.tex}
+\input{Sections/01.Section1.tex}
+\input{Sections/02.Section2.tex}
+\clearpage
+
+\addcontentsline{toc}{section}{References}
+\bibliography{References.bib}
+\bibliographystyle{ieeetr}
+
+
+\clearpage
+\pagenumbering{arabic}% resets `page` counter to 1
+\renewcommand*{\thepage}{A\arabic{page}}
+\appendix
+\input{Sections/Appendix.tex}
+
+\end{document}
